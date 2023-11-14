@@ -19,9 +19,10 @@ module.exports = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'target': 'linear-gradient(270deg, #CD0AED 0%, #510AE8 40.1%, #100CE8 100%)'
+        'target': 'linear-gradient(270deg, #AD6B09 0%, #E95656 40.1%, #E9ED30 100%)'
       },
       colors: {
+        target: "linear-gradient(270deg, #AD6B09 0%, #E95656 40.1%, #E9ED30 100%)",
         primary: "#111215",
         secondary: "#FFFFFF0D",
         white: '#fff',
@@ -65,6 +66,14 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        "pulse2": {
+          from: {
+            opacity: 0
+          },
+          to: {
+            opacity: 1
+          }
+        },
         "accordion-down": {
           from: { height: 0 },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -77,6 +86,8 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "pulse2": "pulse2 1s cubic-bezier(1, 0, 0, 0.5) infinite"
+        
       },
     },
   },
