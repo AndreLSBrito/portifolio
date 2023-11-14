@@ -5,7 +5,7 @@ import { MdOutlineMail } from "react-icons/md";
 
 export function Header() {
   return(
-    <header className='flex flex-col items-center justify-evenly w-full h-[100vh] py-0 px-24 z-10'>
+    <header className='flex flex-col items-center justify-evenly w-full h-[100vh] py-0 px-20 z-10'>
         <div className='flex flex-wrap gap-8 items-center justify-around'>
           <figure>
             <Image
@@ -28,7 +28,7 @@ export function Header() {
 
         <div className='flex flex-col w-full text-white'>
           <Separator
-            className='bg-target w-[60%]'
+            className='bg-target w-[60%] absolute left-0'
           />
 
           <ul className='gap-10 flex flex-col my-4'>
@@ -37,7 +37,7 @@ export function Header() {
             <li className='flex text-4xl gap-4 items-center'>+6 <p className='text-neutral-400/70 text-xs '>ANOS DE <br/> GESTÃO DE PROJETOS</p></li>
           </ul>
 
-          <div className='text-neutral-400/70 text-xs text-right flex justify-end items-center gap-2 mb-10'>
+          <div className='text-neutral-400/70 text-xs text-right flex justify-end gap-2 mt-32'>
             <div>
               <h3>ENTRE EM CONTATO</h3>
 
@@ -48,7 +48,7 @@ export function Header() {
           </div>
 
           <Separator
-            className='bg-target w-[60%] self-end'
+            className='bg-target w-[60%] absolute right-0 top-[99%] '
           />
         </div>
       </header>
