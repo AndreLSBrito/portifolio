@@ -3,9 +3,10 @@ import { NavBar } from './components/navBar'
 import { Header } from './components/header';
 import { SectionContainer } from './components/sectionContainer';
 import { ServiceCard } from './components/serviceCard';
-import { serviceData } from "./utils/data"
+import { projectsData, serviceData } from "./utils/data"
 import { Separator } from '@/components/ui/separator';
 import { SkillTabs } from './components/skillTabs';
+import { ProjectCard } from './components/projectCard';
 
 export default function Home() {
   return (
@@ -47,7 +48,18 @@ export default function Home() {
         subTitle='Meus Projetos e Aplicações Recentes.'
         className='mt-40'
       >
-        
+        {projectsData.map((project, index) => (
+          <ProjectCard
+            key={index}
+            name={project.name}
+            description={project.description}
+            repo={project.repo}
+            url={project.url}
+            image={project.image}
+            tags={project.tags}
+            stack={project.stack}
+          />
+        ))}
       </SectionContainer>
     </main>
   )
