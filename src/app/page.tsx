@@ -8,6 +8,7 @@ import { Separator } from '@/components/ui/separator';
 import { SkillTabs } from './components/skillTabs';
 import { ProjectCard } from './components/projectCard';
 import { ContactForm } from './components/contactForm';
+import { Footer } from './components/footer';
 
 export default function Home() {
   return (
@@ -74,6 +75,15 @@ export default function Home() {
       >
         <ContactForm />
       </SectionContainer>
+
+      <SectionContainer
+        id='footer'
+        title='social'
+        subTitle='Me acompanhe nas redes sociais e saiba mais'
+        className='pb-28 relative'
+      />
+
+      <Footer />
     </main>
   )
 }
