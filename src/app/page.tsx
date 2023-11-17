@@ -7,6 +7,7 @@ import { projectsData, serviceData } from "./utils/data"
 import { Separator } from '@/components/ui/separator';
 import { SkillTabs } from './components/skillTabs';
 import { ProjectCard } from './components/projectCard';
+import { ContactForm } from './components/contactForm';
 
 export default function Home() {
   return (
@@ -39,14 +40,15 @@ export default function Home() {
         className='mt-40'
         slogan='Meu objetivo é encontrar soluções simples e eficientes que atendam as exigências, com o foco sempre no cliente.'
       >
+
         <SkillTabs/>
       </SectionContainer>
 
       <SectionContainer
-        id='skills'
+        id='portfolio'
         title='portfólio'
         subTitle='Meus Projetos e Aplicações Recentes.'
-        className='mt-40'
+        className='py-28 relative'
       >
         {projectsData.map((project, index) => (
           <ProjectCard
@@ -60,6 +62,17 @@ export default function Home() {
             stack={project.stack}
           />
         ))}
+
+        <Separator className='bg-target w-[60%] absolute left-0 bottom-0'/>
+      </SectionContainer>
+      
+      <SectionContainer
+        id='contact'
+        title='vamos conversar'
+        subTitle='Estou disponível para trabalho freelance.'
+        className='py-28 relative'
+      >
+        <ContactForm />
       </SectionContainer>
     </main>
   )
