@@ -4,7 +4,7 @@ interface SectionContainerProps extends HTMLProps<HTMLDivElement> {
   title: string;
   subTitle: string;
   slogan?: string;
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 export function SectionContainer({title, subTitle, slogan, children, className, ...props}: SectionContainerProps){
