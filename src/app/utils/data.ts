@@ -1,39 +1,31 @@
 
-import { CiMobile4 } from "react-icons/ci";
-import { PiMapPinLineThin } from "react-icons/pi";
-import { ReactNode } from 'react'
-import { TfiEmail } from "react-icons/tfi";
-import { MdOutlinePhoneInTalk } from "react-icons/md";
-import { IconProps } from "../components/icon";
 import { SocialLinkProps } from "../components/socialLink";
 import { infoCardDataType } from "../components/infoCard";
-
 
 export const serviceData = [
   {
     service: "Soluções de Aplicativos Móveis Personalizadas",
     description: "Quero ajudar a transformar suas ideias em aplicativos móveis de sucesso.",
-    icon: CiMobile4 ,
+    icon: "aasassaa" ,
   },
   {
     service: "Soluções de Aplicativos Móveis Personalizadas",
     description: "Quero ajudar a transformar suas ideias em aplicativos móveis de sucesso.",
-    icon: CiMobile4 ,
+    icon: "aasassaa" ,
   },
   {
     service: "Soluções de Aplicativos Móveis Personalizadas",
     description: "Quero ajudar a transformar suas ideias em aplicativos móveis de sucesso.",
-    icon: CiMobile4  ,
+    icon: "aasassaa"  ,
   },
   {
     service: "Soluções de Aplicativos Móveis Personalizadas",
     description: "Quero ajudar a transformar suas ideias em aplicativos móveis de sucesso.",
-    icon: CiMobile4 ,
+    icon: "aasassaa" ,
   },
 ]
 
 export type AreaType = ('front' | 'back' | 'data' | 'design')
-
 
 type SkillDataProps = {
   image: string;
@@ -215,20 +207,19 @@ export const projectsData: projectType[] = [
   }
 ]
 
-
 export const contactData: infoCardDataType[] = [
   {
-    iconName: "map-pinned",
+    iconName: "MapPinned",
     title: 'Localização',
     description: 'Brasil, Minas Gerais, Arcos'
   },
   {
-    iconName: "mail",
+    iconName: "Mail",
     title: 'Email',
     description: 'andrelsbrito2022@gmail.com'
   },
   {
-    iconName: "phone",
+    iconName: "Phone",
     title: 'WhatsApp',
     description: '+55 37 99127-7762'
   },
@@ -254,15 +245,15 @@ export const newsData:infoCardDataType[] = [
 
 export const socialLinks:SocialLinkProps[] = [
   {
-    iconName: "linkedin",
+    iconName: "Linkedin" ,
     link: 'https://www.linkedin.com/in/andrelsbrito/'
   },
   {
-    iconName: "instagram",
+    iconName: "Instagram",
     link: 'https://www.instagram.com/andrelsbrito.dev/'
   },
   {
-    iconName: "github",
+    iconName: "Github",
     link: 'https://github.com/AndreLSBrito'
   },
 ]
