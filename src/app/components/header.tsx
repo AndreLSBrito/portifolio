@@ -10,19 +10,20 @@ export function Header() {
           <figure>
             <Image
               src="/profile.svg"
-              alt=''
+              alt='Foto de perfil'
               width={200}
               height={200}
-              className=''
+              style={{objectFit: "contain"}}
+              className="w-auto h-auto"
             />
           </figure>
 
-          <h1 className='w-96 text-white'> 
-            olá, Meu nome é André Luís. Sou desenvolvedor. Ajudo você a criar 
+          <h1 className='w-96 text-white text-2xl'> 
+            Olá, Meu nome é André Luís. Sou desenvolvedor. Ajudo você a criar 
 
-            <span className='text-base bg-clip-text text-transparent bg-target'> Web sites</span>
+            <span className='bg-clip-text text-transparent bg-target text-2xl'> Web sites</span>
 
-            <span className='animate-pulse2'>|</span> 
+            <span className='animate-pulse2 text-2xl'>|</span> 
           </h1>
         </div>
 

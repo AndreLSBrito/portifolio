@@ -1,21 +1,19 @@
 "use client"
 
 import Image from 'next/image';
-import { IconType } from 'react-icons'
-import { ReactNode } from 'react'
+import { Icon, IconProps } from './icon';
 
-interface InfoCardProps {
-  icon?: any;
+export interface infoCardDataType extends IconProps {
   title?: string;
   description: string;
   image?: string;
   date?: string;
 }
 
-export function InfoCard({icon, title, description, image, date}: InfoCardProps){
+export function InfoCard({iconName, title, description, image, date}: infoCardDataType){
   return (
    <div className='flex justify-center items-center gap-4'>
-    <figure>
+    <figure className='w-auto h-auto'>
       {image ? 
         
         (<Image
@@ -23,9 +21,10 @@ export function InfoCard({icon, title, description, image, date}: InfoCardProps)
           alt={`Imagem do projeto descrito, lançado em ${date}`}
           width={70}
           height={70}
+          style={{objectFit: "contain"}}
         /> )
         
-        : icon
+        : <Icon iconName={iconName} size={36} strokeWidth={1}/>
       }
     </figure>
 
