@@ -1,29 +1,12 @@
 
 import { PiMapPinLineThin } from "react-icons/pi";
-import { infoCardDataType, newsData, socialLinks } from "../utils/data";
+import { contactData, newsData, socialLinks } from "../utils/data";
 import { InfoCard } from "./infoCard";
 import { TfiEmail } from "react-icons/tfi";
 import { MdOutlinePhoneInTalk } from "react-icons/md";
 import { SocialLink } from "./socialLink";
 
-export async function Footer(){
-  const contactData: infoCardDataType[] = [
-    {
-      icon: <PiMapPinLineThin size={36}/>,
-      title: 'Localização',
-      description: 'Brasil, Minas Gerais, Arcos'
-    },
-    {
-      icon: <TfiEmail size={36}/>,
-      title: 'Email',
-      description: 'andrelsbrito2022@gmail.com'
-    },
-    {
-      icon: <MdOutlinePhoneInTalk size={36}/>,
-      title: 'WhatsApp',
-      description: '+55 37 99127-7762'
-    },
-  ]
+export function Footer(){
 
   return (
     <footer className="flex flex-col gap-12">
@@ -33,7 +16,7 @@ export async function Footer(){
         {contactData.map((card, index) => (
           <InfoCard
             key={index}
-            icon={card.icon}
+            iconName={card.iconName}
             title={card.title}
             description={card.description}
           />
@@ -61,7 +44,7 @@ export async function Footer(){
             <SocialLink
               key={index}
               link={social.link}
-              name={social.name}
+              iconName={social.iconName}
             />
           ))}
         

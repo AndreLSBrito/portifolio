@@ -3,11 +3,13 @@ import { LucideProps } from 'lucide-react';
 import dynamicIconImports from 'lucide-react/dynamicIconImports';
 
 export interface IconProps extends LucideProps {
-  name: keyof typeof dynamicIconImports;
+  iconName?: keyof typeof dynamicIconImports;
 }
 
-export function Icon({ name, ...props }: IconProps){
-  const LucideIcon = dynamic(dynamicIconImports[name])
+export function Icon({ iconName, ...props }: IconProps){
+  const LucideIcon = iconName && dynamic(dynamicIconImports[iconName])
+
+  if (!LucideIcon) return;
 
   return <LucideIcon {...props} />;
 }
