@@ -12,10 +12,10 @@ import { Footer } from './components/footer';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between bg-primary text-white">
-      <div className='absolute bg-secondary clip-triangle w-full h-[100vh] top-0'/>
+    <main className="flex w-full max-w-[1300px]  min-h-screen flex-col items-center justify-evenly bg-primary text-white">
+      <div className='absolute bg-secondary clip-triangle w-full h-full bottom-0'/>
 
-      <NavBar />
+     
 
       <Header />
 

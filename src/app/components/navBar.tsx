@@ -8,9 +8,9 @@ export function NavBar(){
   const [navOpen, setNavOpen] = useState(false)
 
   return (
-    <nav className="flex w-full justify-between py-4 items-center relative px-24">
+    <nav className="flex w-full justify-between py-4 items-center relative ">
       <div className="text-center">
-        <span className="text-3xl text-neutral-400 text">ANDRÉ LUÍS</span>
+        <span className="text-lg text-neutral-400 tracking-[7px]">ANDRÉ LUÍS</span>
         <p className="text-base bg-clip-text text-transparent bg-target">desenvolvedor</p>
       </div>
 
