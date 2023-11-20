@@ -25,11 +25,16 @@ export default function Home() {
         subTitle='Tenho paixão em levar a solução através da programação.'
         className='relative'
       >
-        {serviceData.map((service, index) => ( 
-        <ServiceCard
-          key={index}
-        />
-        ))}
+        <div className='flex flex-col md:grid md:grid-cols-2 gap-5 mt-5'>
+          {serviceData.map((service, index) => ( 
+            <ServiceCard
+              key={index}
+              service={service.service}
+              description={service.description}
+              iconName={service.iconName}
+            />
+          ))}
+        </div>
 
         <Separator className='bg-target w-[60%] my-20 right-0 absolute top-full'/>
       </SectionContainer>

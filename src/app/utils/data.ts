@@ -1,27 +1,33 @@
 
 import { SocialLinkProps } from "../components/socialLink";
 import { infoCardDataType } from "../components/infoCard";
+import { ServiceCardProps } from "../components/serviceCard";
 
-export const serviceData = [
+export const serviceData:ServiceCardProps[] = [
   {
-    service: "Soluções de Aplicativos Móveis Personalizadas",
+    iconName: "TabletSmartphone",
+    service: "Desenvolvimento de Aplicativos Móveis",
     description: "Quero ajudar a transformar suas ideias em aplicativos móveis de sucesso.",
-    icon: "aasassaa" ,
   },
   {
-    service: "Soluções de Aplicativos Móveis Personalizadas",
-    description: "Quero ajudar a transformar suas ideias em aplicativos móveis de sucesso.",
-    icon: "aasassaa" ,
+    iconName: "PaintBucket" ,
+    service: "Design Gráfico",
+    description: "Vou dar vida a sua ideia com artes visuais de extrema qualidade",
   },
   {
-    service: "Soluções de Aplicativos Móveis Personalizadas",
-    description: "Quero ajudar a transformar suas ideias em aplicativos móveis de sucesso.",
-    icon: "aasassaa"  ,
+    iconName: "Laptop"  ,
+    service: "Desenvolvimento Web",
+    description: "Irei desenvolver a solução ideal para você, desde sites institucionais a softwares complexos",
   },
   {
-    service: "Soluções de Aplicativos Móveis Personalizadas",
-    description: "Quero ajudar a transformar suas ideias em aplicativos móveis de sucesso.",
-    icon: "aasassaa" ,
+    iconName: "ThumbsUp" ,
+    service: "Social Media",
+    description: "Posso gerenciar sue rede social, promovendo mais engajamento através de posts, reels, enquetes e stories, além de projetar todo o aspecto visual de sua marca.",
+  },
+  {
+    iconName: "LineChart" ,
+    service: "Projetos de Desenvolvimento",
+    description: "Confie em minhas habilidades para integrar ao seu time de desenvolvedores, para entregas com qualidade, agilidade e colaboração.",
   },
 ]
 
