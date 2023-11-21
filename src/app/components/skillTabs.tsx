@@ -13,15 +13,15 @@ export function SkillTabs(){
     : skillsData.filter((skillSelected) => ( skillSelected.area.includes(skill)))
 
   return (
-    <Tabs defaultValue="TODAS" className="w-[400px]">
-      <TabsList className="bg-primary ">
+    <Tabs defaultValue="TODAS" className=" w-full">
+      <TabsList className="bg-primary flex justify-start flex-wrap mb-5">
         <TabsTrigger className="hover:bg-clip-text hover:text-transparent hover:bg-target"  value="TODAS" onClick={()=> setSkill('all')}>TODAS</TabsTrigger>
         <TabsTrigger className="hover:bg-clip-text hover:text-transparent hover:bg-target" value="DESIGN" onClick={()=> setSkill('design')}>DESIGN</TabsTrigger>
         <TabsTrigger className="hover:bg-clip-text hover:text-transparent hover:bg-target" value="FRONT-END" onClick={()=> setSkill('front')}>FRONT-END</TabsTrigger>
         <TabsTrigger className="hover:bg-clip-text hover:text-transparent hover:bg-target" value="BACK-END" onClick={()=> setSkill('back')}>BACK-END</TabsTrigger>
         <TabsTrigger  className="hover:bg-clip-text hover:text-transparent hover:bg-target"value="DADOS" onClick={()=> setSkill('data')}>DADOS</TabsTrigger>
       </TabsList>
-      <TabsContent value="TODAS" > 
+      <TabsContent value="TODAS" className="grid grid-cols-auto-fit gap-5">
         {skillsSelected.map((skill, index) => (
           <SkillCard
             key={index}
@@ -31,7 +31,7 @@ export function SkillTabs(){
         ))} 
       </TabsContent>
 
-      <TabsContent value="DESIGN" >
+      <TabsContent value="DESIGN" className="grid grid-cols-auto-fit gap-5">
         {skillsSelected.map((skill, index) => (
             <SkillCard
               key={index}
@@ -41,7 +41,7 @@ export function SkillTabs(){
           ))}
       </TabsContent>
 
-      <TabsContent value="FRONT-END" >
+      <TabsContent value="FRONT-END" className="grid grid-cols-auto-fit gap-5">
         {skillsSelected.map((skill, index) => (
           <SkillCard
             key={index}
@@ -51,7 +51,7 @@ export function SkillTabs(){
         ))}
       </TabsContent>
 
-      <TabsContent value="BACK-END" >
+      <TabsContent value="BACK-END" className="grid grid-cols-auto-fit gap-5">
         {skillsSelected.map((skill, index) => (
           <SkillCard
             key={index}
@@ -61,7 +61,7 @@ export function SkillTabs(){
         ))}
       </TabsContent>
 
-      <TabsContent value="DADOS" >
+      <TabsContent value="DADOS" className="grid grid-cols-auto-fit gap-5">
         {skillsSelected.map((skill, index) => (
           <SkillCard
             key={index}

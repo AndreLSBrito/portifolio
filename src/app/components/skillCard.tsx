@@ -7,7 +7,7 @@ interface SkillCardProps {
 
 export function SkillCard({name, image}: SkillCardProps) {
   return (
-    <div className="flex flex-col justify-center items-center gap-4 bg-secondary rounded-md px-4 py-8 mt-4">
+    <div className="flex flex-col justify-center items-center gap-4 bg-secondary rounded-md px-4 py-8 mt-4 w-full h-full">
       <Image
          src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${image}`}
         alt={name}
