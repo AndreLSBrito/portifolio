@@ -12,7 +12,7 @@ export function SocialLink({iconName, link}: SocialLinkProps){
     <>
     <Gradient />
     
-    <Link href={link}>
+    <Link href={link} target="_blank">
       <div className="flex items-center justify-center border rounded-full w-10 h-10 " >
         <Icon 
           iconName={iconName}
