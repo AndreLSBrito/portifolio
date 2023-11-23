@@ -1,7 +1,7 @@
 'use client'
 import { CiMobile4 } from "react-icons/ci"; 
 import { Gradient } from "./gradient";
-import { Icon, IconProps } from "./icon";
+import Icon, { IconProps } from './icon';
 
 export interface ServiceCardProps extends IconProps {
   service: string;

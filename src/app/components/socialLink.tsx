@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Icon, IconProps } from "./icon";
+import Icon, { IconProps } from "./icon";
 import { Gradient } from "./gradient";
 
 export interface SocialLinkProps extends IconProps {

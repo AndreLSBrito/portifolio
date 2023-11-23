@@ -5,7 +5,7 @@ export interface IconProps extends LucideProps {
   iconName?: keyof typeof icons
 }
 
-export function Icon({ iconName, ...props }: IconProps){
+function Icon({ iconName, ...props }: IconProps){
   const LucideIcon = iconName && dynamic(() =>
     import('lucide-react').then((mod) => mod[iconName])
   )
@@ -14,3 +14,5 @@ export function Icon({ iconName, ...props }: IconProps){
 
   return <LucideIcon {...props} />;
 }
+
+export default Icon

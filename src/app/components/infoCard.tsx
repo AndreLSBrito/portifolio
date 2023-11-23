@@ -1,7 +1,7 @@
 "use client"
 
 import Image from 'next/image';
-import { Icon, IconProps } from './icon';
+import Icon, { IconProps } from './icon';
 
 export interface infoCardDataType extends IconProps {
   title?: string;
