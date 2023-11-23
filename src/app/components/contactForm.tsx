@@ -77,7 +77,7 @@ export function ContactForm(){
       />
 
       {errors.email && <p className='text-left h-4 text-red-500 text-xs'>{errors.email.message}</p>}
-
+    
       <input 
         {...register('phone', { required: true })} 
         className={`bg-primary text-neutral-400 mt-8 border-b border-secondary p-2 ${errors.phone && ' border border-red-400'}`}
@@ -99,9 +99,9 @@ export function ContactForm(){
 
       {errors.message && <p className='text-left h-4 text-red-500 text-xs'>{errors.message.message}</p>}
 
-      <Button type="submit" className='bg-target mt-8 hover:bg-secondary'>
-        Enviar mensagem
-      </Button>
+        <Button type="submit" className='bg-target mt-8 hover:bg-secondary self-center w-[40%] min-w-[150px]'>
+          Enviar mensagem
+        </Button>
     </form>
   )
 }
