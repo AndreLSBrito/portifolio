@@ -4,7 +4,7 @@ import { projectType } from "../utils/data";
 export function ProjectCard({name, description, image, repo, tags, url, stack}: projectType){
   return (
     <a href={url ?? repo} target="_blank">
-      <div className="h-full flex flex-col overflow-hidden relative rounded-lg justify-start items-center gap-4 w-[350px] bg-secondary px-4 py-8 mt-4 hover:duration-500 hover:scale-105 transition-all ease-in-out duration-500">
+      <div className="h-full flex flex-col overflow-hidden relative rounded-lg justify-start items-center gap-4 min-w-[300px] bg-secondary px-4 py-8 mt-4 hover:duration-500 hover:scale-105 transition-all ease-in-out duration-500">
         <div className="absolute text-xs left-[80%] top-3 bg-target text-primary p-1 rounded-full">{stack}</div>
         
         <h3>{name}</h3>
