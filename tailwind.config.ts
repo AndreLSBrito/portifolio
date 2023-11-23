@@ -62,6 +62,7 @@ module.exports = {
       },
       gridTemplateColumns: {
         'auto-fit': 'repeat(auto-fit, minmax(200px, 1fr))',
+        'auto-fit-300': 'repeat(auto-fit, minmax(300px, 1fr))',
       },
       borderRadius: {
         lg: "var(--radius)",

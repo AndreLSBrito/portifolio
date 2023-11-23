@@ -12,7 +12,7 @@ import { Footer } from './components/footer';
 
 export default function Home() {
   return (
-    <main className="flex w-full max-w-[1300px]  min-h-screen flex-col items-center justify-evenly bg-primary text-white">
+    <main className="flex px-16 w-full max-w-[1300px]  min-h-screen flex-col items-center justify-evenly bg-primary text-white">
       <div className='absolute bg-secondary clip-triangle w-full h-full bottom-0'/>
 
      
@@ -23,7 +23,7 @@ export default function Home() {
         id='services'
         title='O QUE SEI FAZER'
         subTitle='Tenho paixão em levar a solução através da programação.'
-        className='relative'
+        className='py-28 relative'
       >
         <div className='flex flex-col md:grid md:grid-cols-2 gap-5 mt-5'>
           {serviceData.map((service, index) => ( 
@@ -36,14 +36,16 @@ export default function Home() {
           ))}
         </div>
 
-        <Separator className='bg-target w-[60%] my-20 right-0 absolute top-full'/>
+        <div className='absolute w-[98.7dvw] bottom-0'>
+          <Separator className='bg-target w-[60%] absolute right-0'/>
+        </div>
       </SectionContainer>
 
       <SectionContainer
         id='skills'
         title='Como faço'
         subTitle='Skills'
-        className='mt-40'
+        className='mt-28'
         slogan='Meu objetivo é encontrar soluções simples e eficientes que atendam as exigências, com o foco sempre no cliente.'
       >
 
@@ -56,27 +58,32 @@ export default function Home() {
         subTitle='Meus Projetos e Aplicações Recentes.'
         className='py-28 relative'
       >
-        {projectsData.map((project, index) => (
-          <ProjectCard
-            key={index}
-            name={project.name}
-            description={project.description}
-            repo={project.repo}
-            url={project.url}
-            image={project.image}
-            tags={project.tags}
-            stack={project.stack}
-          />
-        ))}
+        <div className='grid grid-cols-auto-fit-300 md:w-full sm:mx-auto justify-center gap-12'>
+          {projectsData.map((project, index) => (
+            <ProjectCard
+              key={index}
+              name={project.name}
+              description={project.description}
+              repo={project.repo}
+              url={project.url}
+              image={project.image}
+              tags={project.tags}
+              stack={project.stack}
+            />
+          ))}
+        </div>
 
-        <Separator className='bg-target w-[60%] absolute left-0 bottom-0'/>
+        <div className='absolute w-[98.7dvw] bottom-0'>
+          <Separator className='bg-target w-[60%] absolute bottom-0 left-0'/>
+        </div>
       </SectionContainer>
+        
       
       <SectionContainer
         id='contact'
         title='vamos conversar'
         subTitle='Estou disponível para trabalho freelance.'
-        className='py-28 relative'
+        className='relative'
       >
         <ContactForm />
       </SectionContainer>

@@ -7,6 +7,12 @@ const nextConfig = {
         hostname: 'i.ibb.co',
         port: '',
         pathname: '/**/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com',
+        port: '',
+        pathname: '/**/**'
       }
     ]
   },
