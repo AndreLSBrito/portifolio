@@ -183,19 +183,19 @@ export const contactData: infoCardDataType[] = [
 
 export const newsData:infoCardDataType[] = [
   {
-    image: 'https://i.ibb.co/d7FczYy/Screenshot-2023-09-09-at-21-06-42-Frontend-Mentor-Rock-Paper-Scissors.png',
+    image: 'https://raw.githubusercontent.com/AndreLSBrito/FSW-Trip/main/public/Capa.png',
     description: 'Nova interface para o site',
-    date: '17 de nov 2023'
+    date: '20 de Jul 2023'
   },
   {
-    image: 'https://i.ibb.co/RbKxdN9/Screenshot-2023-09-09-at-20-41-40-Frontend-Mentor-Shortly-URL-shortening-API-Challenge.png',
-    description: 'Novas regras ao jogo',
-    date: '17 de nov 2023'
+    image: 'https://github.com/AndreLSBrito/appToDoList/blob/main/assets/preview.png?raw=true',
+    description: 'Criação do novo aplicativo',
+    date: '30 de Abr 2023'
   },
   {
-    image: 'https://i.ibb.co/Wg5GvD2/Screenshot-2023-07-15-at-23-25-42-Frontend-Mentor-Todo-app.png',
-    description: 'Nova interface para o site',
-    date: '17 de nov 2023'
+    image: 'https://github.com/AndreLSBrito/Links/blob/main/assets/preview.jpg?raw=true',
+    description: 'Adicionado dark e light mode',
+    date: '07 de Jan 2023'
   },
 ]
 

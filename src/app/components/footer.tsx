@@ -9,7 +9,7 @@ import { SocialLink } from "./socialLink";
 export function Footer(){
 
   return (
-    <footer className="flex flex-col gap-12">
+    <footer className="flex flex-col lg:flex-row justify-between pb-20 w-full gap-12">
       <div className="flex flex-col gap-8 items-start">
         <h2 className="text-lg">Contato</h2>
 
