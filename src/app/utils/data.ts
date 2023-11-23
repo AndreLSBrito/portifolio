@@ -135,9 +135,30 @@ export const projectsData: projectType[] = [
     image:
       'https://raw.githubusercontent.com/AndreLSBrito/FSW-Trip/main/public/Capa.png',
     description:
-      'Aplicação full stack de reservas de viagens proporciona aos usuários uma experiência completa e conveniente ao planejar suas viagens. Com recursos de pesquisa flexíveis, reserva de hospedagem fácil, pagamento seguro e gerenciamento de reservas, os usuários podem aproveitar ao máximo suas viagens com total tranquilidade.',
+      'Aplicação full stack de reservas de viagens proporciona aos usuários uma experiência completa e conveniente ao planejar suas viagens.',
     tags: ['Next', 'typescript', 'tailwind', 'axios', 'api'],
     stack: "Fullstack"
+  },
+  {
+    name: 'App Controle de Tarefas',
+    repo: 'https://github.com/AndreLSBrito/appToDoList',
+    image:
+      'https://github.com/AndreLSBrito/appToDoList/blob/main/assets/preview.png?raw=true',
+    description:
+      'Aplicação criada em React Native no intuito de cumprir o desafio da RocktSeat para o módulo de fundamentos do React Native',
+    tags: ['React Native', 'TypeScript', 'Expo', 'Figma'],
+    stack: "Mobile"
+  },
+  {
+    name: 'Agregador de Links',
+    repo: 'https://github.com/AndreLSBrito/Links',
+    url: 'https://andrelsbrito.github.io/Links/',
+    image:
+      'https://github.com/AndreLSBrito/Links/blob/main/assets/preview.jpg?raw=true',
+    description:
+      'O DevLinks é um agregador de links para usar como cartão de visitas online.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Figma'],
+    stack: "Frontend"
   },
   
 ]
