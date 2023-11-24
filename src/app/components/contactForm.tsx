@@ -13,7 +13,7 @@ type FormDataProps ={
   phone:string
 }
 
-const signUpSchema = yup.object({
+const formSchema = yup.object({
   name: yup.string().required('Informe o nome.'),
   email: yup.string().required('Informe o e-mail.').email('E-mail inválido.'),
   message: yup.string().required('Digite sua mensagem.'),
@@ -23,8 +23,12 @@ const signUpSchema = yup.object({
 export function ContactForm(){
   const [phoneNumber, setPhoneNumber] = useState('');
 
-  const { register, handleSubmit, formState: {errors} } = useForm<FormDataProps>({
-    resolver: yupResolver(signUpSchema)
+  const { register, 
+      handleSubmit, 
+      formState: {errors, isSubmitting},
+      reset
+    } = useForm<FormDataProps>({
+    resolver: yupResolver(formSchema)
   })
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -48,8 +52,17 @@ export function ContactForm(){
     setPhoneNumber(isDeleting ? numericValue : formattedValue);
   };
     
-  function submitForm (data : FormDataProps) {
-    console.log(data)
+  async function submitForm (data : FormDataProps) {
+    await fetch('api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    reset();
+    setPhoneNumber('')
   }
 
   return (
@@ -99,7 +112,7 @@ export function ContactForm(){
 
       {errors.message && <p className='text-left h-4 text-red-500 text-xs'>{errors.message.message}</p>}
 
-        <Button type="submit" className='bg-target mt-8 hover:bg-secondary self-center w-[40%] min-w-[150px]'>
+        <Button disabled={isSubmitting} type="submit" className='bg-target mt-8 hover:bg-secondary self-center w-[40%] min-w-[150px]'>
           Enviar mensagem
         </Button>
     </form>
