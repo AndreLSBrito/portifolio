@@ -1,8 +1,8 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 const DISCORD_WEBHOOK = process.env.DISCORD_WEBHOOK!
 
-export async function POST(request: Request){
+export async function POST(request: NextRequest){
   try {
     const body = await request.json()
     const {name, email, phone, message} = body
@@ -45,9 +45,12 @@ export async function POST(request: Request){
       body: JSON.stringify(messageData), 
     });
 
-    return NextResponse.json({
-      message: 'Mensagem enviada com sucesso!',
-    })
+    return NextResponse.json(
+      {
+        message: 'Mensagem enviada com sucesso!',
+      },
+      { status: 200 }
+    )
   } catch (error) {
     return NextResponse.error
   }
