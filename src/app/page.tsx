@@ -1,5 +1,3 @@
-import Image from 'next/image'
-import { NavBar } from './components/navBar'
 import { Header } from './components/header';
 import { SectionContainer } from './components/sectionContainer';
 import { ServiceCard } from './components/serviceCard';
@@ -12,10 +10,8 @@ import { Footer } from './components/footer';
 
 export default function Home() {
   return (
-    <main className="flex px-16 w-full max-w-[1300px]  min-h-screen flex-col items-center justify-evenly bg-primary text-white">
+    <main className="flex px-5 w-full max-w-[1300px]  min-h-screen flex-col items-center justify-evenly bg-primary text-white">
       <div className='absolute bg-secondary clip-triangle w-full h-full bottom-0'/>
-
-     
 
       <Header />
 
