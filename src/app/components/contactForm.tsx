@@ -5,6 +5,8 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { yupResolver} from '@hookform/resolvers/yup'
 import { Button } from '@/components/ui/button'
+import { toast, ToastContainer } from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css";
 
 type FormDataProps ={
   name:string;
@@ -53,68 +55,85 @@ export function ContactForm(){
   };
     
   async function submitForm (data : FormDataProps) {
-    await fetch('api/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
+    try {
+      await fetch('api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
 
-    reset();
-    setPhoneNumber('')
+      toast.success('Enviada com sucesso!', {
+        position: "bottom-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        theme: "colored",
+      });
+
+      reset();
+      setPhoneNumber('');
+
+    } catch (error) {
+      toast.error('Erro no envio. Tente novamente!')
+    }
   }
 
   return (
-   
-    <form 
-      onSubmit={handleSubmit(submitForm)}
-      className='flex flex-col w-full my-8'
-    >
-      <input {
-        ...register('name')} 
-        className={`bg-primary text-neutral-400 mt-8 border-b border-secondary p-2 ${errors.name && ' border border-red-400'}`}
-        placeholder='Nome'
-        type='text'
-        name='name'
-      />
+    <>
+      <ToastContainer/>
+
+      <form 
+        onSubmit={handleSubmit(submitForm)}
+        className='flex flex-col w-full my-8'
+      >
+        <input {
+          ...register('name')} 
+          className={`bg-primary text-neutral-400 mt-8 border-b border-secondary p-2 ${errors.name && ' border border-red-400'}`}
+          placeholder='Nome'
+          type='text'
+          name='name'
+        />
+        
+        {errors.name && <p className='text-left h-4 text-red-500 text-xs'>{errors.name.message}</p>}
+
+        <input 
+          {...register('email', { required: true })} 
+          className={`bg-primary text-neutral-400 mt-8 border-b border-secondary p-2 ${errors.email && ' border border-red-400'}`}
+          placeholder='Email'
+          type='text' 
+          name='email'
+        />
+
+        {errors.email && <p className='text-left h-4 text-red-500 text-xs'>{errors.email.message}</p>}
       
-      {errors.name && <p className='text-left h-4 text-red-500 text-xs'>{errors.name.message}</p>}
+        <input 
+          {...register('phone', { required: true })} 
+          className={`bg-primary text-neutral-400 mt-8 border-b border-secondary p-2 ${errors.phone && ' border border-red-400'}`}
+          placeholder='WhatsApp'
+          type='tel' 
+          name='phone'
+          value={phoneNumber}
+          onChange={handleInputChange}
+        />
 
-      <input 
-        {...register('email', { required: true })} 
-        className={`bg-primary text-neutral-400 mt-8 border-b border-secondary p-2 ${errors.email && ' border border-red-400'}`}
-        placeholder='Email'
-        type='text' 
-        name='email'
-      />
+        {errors.phone && <p className='text-left h-4 text-red-500 text-xs'>{errors.phone.message}</p>}
+      
+        <textarea 
+          {...register('message', { pattern: /\d+/ })} 
+          className={`bg-primary text-neutral-400 mt-8 border-b border-secondary p-2 h-40 ${errors.message && ' border border-red-400'}`}
+          placeholder='Mensagem'
+          name='message'
+        />
 
-      {errors.email && <p className='text-left h-4 text-red-500 text-xs'>{errors.email.message}</p>}
-    
-      <input 
-        {...register('phone', { required: true })} 
-        className={`bg-primary text-neutral-400 mt-8 border-b border-secondary p-2 ${errors.phone && ' border border-red-400'}`}
-        placeholder='WhatsApp'
-        type='tel' 
-        name='phone'
-        value={phoneNumber}
-        onChange={handleInputChange}
-      />
+        {errors.message && <p className='text-left h-4 text-red-500 text-xs'>{errors.message.message}</p>}
 
-      {errors.phone && <p className='text-left h-4 text-red-500 text-xs'>{errors.phone.message}</p>}
-    
-      <textarea 
-        {...register('message', { pattern: /\d+/ })} 
-        className={`bg-primary text-neutral-400 mt-8 border-b border-secondary p-2 h-40 ${errors.message && ' border border-red-400'}`}
-        placeholder='Mensagem'
-        name='message'
-      />
-
-      {errors.message && <p className='text-left h-4 text-red-500 text-xs'>{errors.message.message}</p>}
-
-        <Button disabled={isSubmitting} type="submit" className='bg-target mt-8 hover:bg-secondary self-center w-[40%] min-w-[150px]'>
-          Enviar mensagem
-        </Button>
-    </form>
+          <Button disabled={isSubmitting} type="submit" className='bg-target mt-8 hover:bg-secondary self-center w-[40%] min-w-[150px]'>
+            Enviar mensagem
+          </Button>
+      </form>
+    </>
   )
 }

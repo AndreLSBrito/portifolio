@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import './globals.css'
+import { ToastContainer } from 'react-toastify'
 
 const poppins = Poppins({ weight: ['300','400', '500', '700', '800'], subsets: ['latin', 'latin-ext']})
 
@@ -16,7 +17,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} bg-primary flex flex-coll items-center justify-center`}>{children}</body>
+      
+      <body className={`${poppins.className} bg-primary flex flex-coll items-center justify-center`}>
+        
+        {children}
+      </body>
     </html>
   )
 }
