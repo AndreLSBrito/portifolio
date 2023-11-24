@@ -4,8 +4,10 @@ import Image from "next/image";
 import { MdOutlineMail } from "react-icons/md";
 import { NavBar } from "./navBar";
 import { Gradient } from "./gradient";
+import { TextAnimation } from "./textAnimation";
 
 export function Header() {
+  
   return(
     <header className='flex flex-col items-center justify-between w-full h-screen py-0 px-5 z-10'>
       <NavBar />
@@ -25,7 +27,7 @@ export function Header() {
         <h1 className='max-w-[750px] text-white text-xl md:text-3xl text-center'> 
           Olá, Meu nome é André Luís. Sou desenvolvedor. Ajudo você a criar 
 
-          <span className='bg-clip-text text-transparent bg-target text-xl md:text-3xl'> Web sites.</span>
+          <TextAnimation words={['web site.', 'landing page.', 'aplicações web.', 'aplicativos móveis.']}/>
 
           <span className='animate-pulse2 text-xl md:text-3xl'>|</span> 
         </h1>
