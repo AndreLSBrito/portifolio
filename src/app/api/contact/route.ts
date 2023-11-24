@@ -45,9 +45,12 @@ export async function POST(request: Request){
       body: JSON.stringify(messageData), 
     });
 
-    return NextResponse.json({
-      message: 'Mensagem enviada com sucesso!',
-    })
+    return NextResponse.json(
+      {
+        message: 'Mensagem enviada com sucesso!',
+      },
+      { status: 200 }
+    )
   } catch (error) {
     return NextResponse.error
   }
